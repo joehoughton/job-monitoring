@@ -1,0 +1,36 @@
+﻿.widget-job-monitoring-tasks div.collapse-panel div.collapse-header {
+    cursor: default;
+}
+
+.widget-job-monitoring-tasks div.collapse-panel div.collapse-header div.collapse-pulldown, .fa-stack {
+    cursor: pointer;
+}
+
+.widget-job-monitoring-tasks .collapse-header {
+    font-size: 1.2em;
+}
+
+.widget-job-monitoring-tasks .collapse-header #title {
+    color: #737373;
+    font-weight: bold;
+}
+
+.widget-job-monitoring-tasks {
+    margin-top: 20px;
+}
+
+.widget-job-monitoring-tasks {
+    margin-top: 20px;
+}
+
+.widget-job-monitoring-tasks span.task-date-colour-black {
+    color: #000000;
+}
+
+.widget-job-monitoring-tasks span.task-date-colour-amber {
+    color: #EE8469;
+}
+
+.widget-job-monitoring-tasks span.task-date-colour-green {
+    color: #6CB774;
+}

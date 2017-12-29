@@ -1,0 +1,6 @@
+﻿{
+  "scripts": [ "/panels/JobMonitoringTask/panel.js" ],
+  "styles": [],
+  "templates": [ "/panels/JobMonitoringTask/panel.html" ],
+  "components": []
+}

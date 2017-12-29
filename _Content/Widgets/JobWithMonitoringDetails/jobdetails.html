@@ -1,0 +1,37 @@
+﻿<script type="text/html" id="JH.Widgets.JobWithMonitoringDetails.JobDetails">
+    <div class="container-fluid">
+        <div data-bind="with: job.monitoringDetails">
+            <div class="row v-offset-7">
+                <div class="col-md-5"><strong>Tel</strong></div>
+                <div class="col-md-7" data-bind="text: supplierTelephoneNumber"></div>
+            </div>
+            <div class="row v-offset-7">
+                <div class="col-md-5"><strong>Account</strong></div>
+                <div class="col-md-7" data-bind="text: clientName"></div>
+            </div>
+            <div class="row v-offset-7">
+                <div class="col-md-5"><strong>Password</strong></div>
+                <div class="col-md-7" data-bind="text: clientPassword"></div>
+                <div class="col-md-7" data-bind="if: !clientPassword()">No password set</div>
+            </div>
+            <div class="row v-offset-7">
+                <div class="col-md-5"><strong>When</strong></div>
+                <div class="col-md-7" data-bind="date: pickUpDateTime, format:'L LT'"></div>
+            </div>
+            <div class="row v-offset-7">
+                <div class="col-md-5"><strong>Lead Passenger</strong></div>
+                <div class="col-md-7" data-bind="text: leadPassengerName"></div>
+            </div>
+        </div>
+        <div data-bind="with: job.bookingLocation">
+            <div class="row v-offset-7">
+                <div class="col-md-5"><strong>From</strong></div>
+                <div class="col-md-7" data-bind="text: locationFrom"></div>
+            </div>
+            <div class="row v-offset-7">
+                <div class="col-md-5"><strong>To</strong></div>
+                <div class="col-md-7" data-bind="text: locationTo"></div>
+            </div>
+        </div>
+    </div>
+</script>

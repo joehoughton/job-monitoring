@@ -1,0 +1,61 @@
+﻿<script type="text/html" id="JH.Widgets.Booking.JobMonitoringTasks.JobMonitoringTask">
+    <div class="collapse-panel" data-bind="accordion: task.panelActive, accordiontarget: 'div#collapse-body_' + task.id()">
+        <div class="collapse-header">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span data-bind="text: task.title" id="title"></span>
+                </div>
+                <div class="col-sm-4">
+                    <span data-bind="date: taskDate, format:'L LT', css: taskDateColour"></span>
+                </div>
+                <div class="col-sm-3" data-bind="if: !isFlagged() && requiresMonitoring()">
+                    <span class="fa-stack" data-bind="click: task.isFinalContact ? $root.openJobMonitoringPanel.bind($root, task, true) : $root.flagTaskAsTracked.bind($data)">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-flag-o fa-stack-1x"></i>
+                    </span>
+
+                    <span class="fa-stack" data-bind="click: $root.openJobMonitoringPanel.bind($root, task, false)">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-sticky-note-o fa-stack-1x"></i>
+                    </span>
+                </div>
+                <div data-bind="if: isFlagged() && requiresMonitoring()">
+                    <div class="col-sm-3">
+                        <span class="fa-stack" data-bind="click: $root.unflagFlaggedTask.bind($root, task)">
+                            <i class="fa fa-flag fa-stack-1x"></i>
+                            <i class="fa fa-ban fa-stack-2x text-danger"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <div class="collapse-pulldown fa" data-bind="switchCss: {value: task.panelActive, whenTrue:'fa-angle-up', whenFalse:'fa-angle-down'}, toggle: task.panelActive"></div>
+                </div>
+            </div>
+        </div>
+
+        <div data-bind="attr:{id: 'collapse-body_' + task.id()}, template:{afterRender: $root.collapseTask.bind($root, 'collapse-body_' + task.id())}">
+            <div class="row" data-bind="if: isFlagged() === false && requiresMonitoring() === true">
+                <div class="col-sm-12">
+                    <p>The task status is incomplete</p>
+                </div>
+            </div>
+            <div class="row" data-bind="if: requiresMonitoring() === false">
+                <div class="col-sm-12">
+                    <p>The task does not require monitoring</p>
+                </div>
+            </div>
+            <div class="row" data-bind="if: isFlagged">
+                <div class="col-sm-12">
+                    <p data-bind="with: flaggedTaskDetails">
+                        <span><i class="fa fa-flag"></i></span> <span data-bind="date: transitionDateTime, format:'L LT'"></span> by <span data-bind="text: username"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="row" data-bind="if: commentsExist() || isFlagged()">
+                <div class="col-sm-12">
+                    <div data-bind="attr:{id: 'comments-widget-host_' + task.id()}, template:{afterRender: $root.loadTaskComments.bind($root, task.id())}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

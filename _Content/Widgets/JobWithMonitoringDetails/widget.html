@@ -1,0 +1,6 @@
+﻿<div class="collapse-panel" data-bind="collapsePanelBehaviour:{ mode: 'standard', title: job.title(), icon: 'fa-car'}">
+    <div data-bind="template: { name: 'JH.Widgets.JobWithMonitoringDetails.JobDetails' }"></div>
+    <div data-bind="if: loadJobMonitoringTasks">
+        <div data-bind="template: { name: 'JH.Widgets.JobWithMonitoringDetails.JobMonitoringTasks' }"></div>
+    </div>
+</div>

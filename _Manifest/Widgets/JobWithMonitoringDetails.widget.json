@@ -1,0 +1,13 @@
+﻿{
+    "scripts": [
+        "/widgets/jobwithmonitoringdetails/widget.js"
+    ],
+    "styles": [],
+    "templates": [
+      "/widgets/jobwithmonitoringdetails/widget.html",
+      "/widgets/jobwithmonitoringdetails/jobdetails.html",
+      "/widgets/jobwithmonitoringdetails/jobmonitoringtasks.html"
+    ],
+    "menuTemplates": [],
+    "components": []
+}

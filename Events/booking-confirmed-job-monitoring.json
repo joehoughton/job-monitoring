@@ -1,0 +1,5 @@
+{  
+    "eventType":"booking-finalise",
+    "script":"Log.Information(\"Async Task Runner ran on booking-finalise event - Booking Confirmation Job Monitoring Start\"); \r\n\r\nactions.sharedo.Http.Post(\"/api/bookings/\" + ev.Data.BookingId + \"/createBookingJobMonitoringTasks\", {}).Wait(); \r\n    \r\nLog.Information(\"Async Task Runner - Booking Confirmation Job Monitoring End\"); ",
+    "parameters":[]
+ }

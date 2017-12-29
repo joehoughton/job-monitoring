@@ -1,0 +1,10 @@
+﻿<div class="widget-job-monitoring hidden" data-bind="css: { hidden: !loaded() }">
+    <div class="widget" data-bind="visible: jobIds().length, with: jobIds">
+        <div class="widget-body">
+            <div class="contentHolder" data-bind="foreach: { data: $data, as: 'jobId' }">
+                <div data-bind="attr: {'id':'jobwithmonitoringdetailswidget_' + jobId}, template:{afterRender: $root.showJobWithMonitoringDetailsWidget.bind($root, jobId)}"></div>
+            </div>
+        </div>
+    </div>
+    <p data-bind="visible: !jobIds().length">No jobs found</p>
+</div>

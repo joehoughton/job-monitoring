@@ -1,0 +1,10 @@
+﻿<div class="widget-job-monitoring-tasks hidden" data-bind="css: { hidden: !loaded() }">
+    <div data-bind="visible: monitoringTasks().length">
+        <div data-bind="foreach: { data: monitoringTasks, as: 'task' }">
+            <div data-bind="template: { name: 'JH.Widgets.JobMonitoringTasks.JobMonitoringTask' }"></div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <p data-bind="visible: !monitoringTasks().length">No tasks found</p>
+    </div>
+</div>
